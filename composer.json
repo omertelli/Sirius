@@ -18,6 +18,11 @@
         "monolog/monolog": "~1.17"
     },
     "autoload": {
-        "psr-4": {"Sirius\\": "src"}
+        "psr-4": {
+            "Sirius\\": "src",
+            "Sirius\\Facades\\": "src/facades",
+            "Sirius\\Session\\": "src/session",
+            "Sirius\\Session\\Adapter\\": "src/session/adapter"
+        }
     }
 }
