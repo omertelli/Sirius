@@ -6,13 +6,11 @@
  * Time: 下午1:09
  */
 namespace Sirius\Facades;
+use Sirius\Config;
 
-/**
- * Class Illuminate\Database\Capsule\Manager
- */
 class DB {
     /**
-     * @var Illuminate\Database\Capsule\Manager
+     * @var \Illuminate\Database\Capsule\Manager
      */
     private static $_instance = null;
 
@@ -23,7 +21,7 @@ class DB {
 
         if (static::$_instance === null) {
             $config = Config::get("database");
-            static::$_instance = new Illuminate\Database\Capsule\Manager();
+            static::$_instance = new \Illuminate\Database\Capsule\Manager();
 
             if ($config["connections"] && is_array($config["connections"])) {
                 foreach($config["connections"] as $key=>$cfg) {

@@ -6,6 +6,7 @@
  * Time: 下午9:16
  */
 namespace Sirius\Facades;
+use Sirius\Config;
 
 /**
 //memcache配置
@@ -26,29 +27,29 @@ namespace Sirius\Facades;
 
 class Cache {
     /**
-     * @var  Memcached[] array
+     * @var  \Memcached[] array
      */
     private static $instance = [];
 
     /**
      * @param string $namespace
-     * @return Memcached
-     * @throws Exception
+     * @return \Memcached
+     * @throws \Exception
      */
     public static function connection($namespace = "default") {
         if (!isset(static::$instance[$namespace]) || !static::$instance[$namespace]) {
             $config = Config::get("cache.memcache");
 
             if (!isset($config[$namespace])) {
-                throw new Exception("cache config has not key $namespace", 1);
+                throw new \Exception("cache config has not key $namespace", 1);
             }
             $config = $config[$namespace];
-            $memcached = new Memcached($config["persistent_id"]);
+            $memcached = new \Memcached($config["persistent_id"]);
             $memcached->addServers($config["servers"]);
 
             $options = [
-                Memcached::OPT_LIBKETAMA_COMPATIBLE => true,
-                Memcached::OPT_COMPRESSION => true,
+                \Memcached::OPT_LIBKETAMA_COMPATIBLE => true,
+                \Memcached::OPT_COMPRESSION => true,
             ];
 
             $options = array_merge($options , (array) $config["options"]);

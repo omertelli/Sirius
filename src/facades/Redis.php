@@ -6,6 +6,8 @@
  * Time: 下午10:38
  */
 namespace Sirius\Facades;
+use Sirius\Config;
+
 /**
  * Class Redis
  *
@@ -39,7 +41,7 @@ class Redis {
      */
     public static function connection($namespace = "default") {
         if (!isset(static::$instance[$namespace]) || !static::$instance[$namespace]) {
-            $config = \Config::get("cache.redis");
+            $config = Config::get("cache.redis");
 
             if (!isset($config[$namespace])) {
                 throw new \Exception("redis cache config has not key $namespace", 1);

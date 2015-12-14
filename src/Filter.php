@@ -24,7 +24,7 @@ class Filter {
      */
     public static function add($name, $cb) {
         if (!is_object($cb)) {
-            throw new Exception("The filter $name is not a object", 2);
+            throw new \Exception("The filter $name is not a object");
         }
 
         static::$filters[$name] = $cb;
@@ -39,7 +39,7 @@ class Filter {
         if (!isset(static::$filters[$name]) && in_array($name,[static::FILTER_BEFORE,static::FILTER_AFTER])) {
             return true;
         } else if (!isset(static::$filters[$name])) {
-            throw new Exception("The filter $name is undefined", 3);
+            throw new \Exception("The filter $name is undefined");
         }
 
         return call_user_func(static::$filters[$name]);

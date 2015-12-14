@@ -7,6 +7,8 @@
  */
 namespace Sirius\Facades;
 
+use Sirius\Logger;
+
 class Log {
     /**
      * @var Logger

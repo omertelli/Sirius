@@ -7,16 +7,18 @@
  */
 namespace Sirius\Facades;
 
+use Philo\Blade\Blade;
+
 class View {
 
     private static $_instance = null;
 
     /**
-     * @return Philo\Blade\Blade
+     * @return \Philo\Blade\Blade
      */
     public static function instance(){
         if (static::$_instance === null) {
-            $blade = new Philo\Blade\Blade(BASE_PATH."/app/views", BASE_PATH."/app/cache");
+            $blade = new Blade(BASE_PATH."/app/views", BASE_PATH."/app/cache");
             static::$_instance = $blade->view();
         }
 

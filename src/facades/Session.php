@@ -7,6 +7,8 @@
  */
 namespace Sirius\Facades;
 
+use Sirius\Config;
+
 class Session {
     private static $_instance = null;
 
