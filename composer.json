@@ -8,7 +8,7 @@
             "email": "ohworkit@139.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": ">=5.5",
         "nikic/fast-route": "^0.6.0",
