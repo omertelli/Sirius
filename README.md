@@ -4,6 +4,31 @@
 
 Sirius is a miniature of web application framework. Usage as laravel, but is small, fast framework.Only provide routing, blade templates, database operations, Memcache and Redis operation function
 
+### Install
+
+To install with composer:
+
+```
+composer require ohworkit/sirius
+```
+
+### Usage
+
+bootstrap.php
+
+```
+// BASE_PATH
+define('BASE_PATH', __DIR__);
+
+// Autoload
+require BASE_PATH.'/vendor/autoload.php';
+
+$app = new Sirius\Sirius();
+$app->run();
+```
+
+More [Sirius Demo](https://github.com/ohworkit/SiriusDemo)
+
 ### Framework require
 
 
