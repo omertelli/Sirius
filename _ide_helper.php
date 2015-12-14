@@ -3076,4 +3076,20 @@ namespace {
             return \Session::instance()->destroy( $removeData);
         }
     }
+
+    class SiriusRedis {
+
+        public static function set($name, $value, $ttl) {
+            return \Sirius\Facades\Redis::set($name, $value, $ttl);
+        }
+
+        public static function get($name) {
+            return \Sirius\Facades\Redis::set($name);
+        }
+
+        public static function pipeline($cb) {
+            return \Sirius\Facades\Redis::pipeline($cb);
+        }
+
+    }
 }
