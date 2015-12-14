@@ -16,5 +16,13 @@
         "philo/laravel-blade": "3.*",
         "predis/predis": "~1.0.1",
         "monolog/monolog": "~1.17"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sirius\\": "src",
+            "Sirius\\Sesion": "src/session",
+            "Sirius\\Sesion\\Adapter": "src/session/adapter",
+            "Sirius\\Sesion": "src/facades"
+        }
     }
 }
