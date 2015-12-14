@@ -35,7 +35,7 @@ class Sirius {
             include BASE_PATH.'/config/routes.php';
         },[
             'cacheFile' => BASE_PATH . '/app/cache/route.cache', /* required */
-            'cacheDisabled' => APP_ENVIRONMENT == 'develop' && !DEBUG ? true : false,
+            'cacheDisabled' => APP_ENVIRONMENT == 'develop'|| DEBUG ? true : false,
         ]);
 
         $this->dispatcher = $dispatcher;
