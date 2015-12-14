@@ -113,12 +113,12 @@ use.
 
 ```
 //by default
-SRedis::set($key,$value,$expire);
-SRedis::get($key);
+SiriusRedis::set($key,$value,$expire);
+SiriusRedis::get($key);
 
 //has other instance
-SRedis::connection("other config name")->set($key,$value,$expire);
-SRedis::connection("other config name")->get($key);
+SiriusRedis::connection("other config name")->set($key,$value,$expire);
+SiriusRedis::connection("other config name")->get($key);
 ```
 
 ### Webbench
