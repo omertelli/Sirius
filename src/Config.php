@@ -61,7 +61,7 @@ class Config {
 
         if (defined("APP_ENVIRONMENT")) {
             if (file_exists(BASE_PATH . "/config/" . APP_ENVIRONMENT . "/$filename.php")) {
-                $config_ENVIRONMENT = include(BASE_PATH . "/config/" . APP_ENVIRONMENT . "/Config.php");
+                $config_ENVIRONMENT = include(BASE_PATH . "/config/" . APP_ENVIRONMENT . "/$filename.php");
                 $config = array_merge($config, $config_ENVIRONMENT);
             }
         }
