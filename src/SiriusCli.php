@@ -65,7 +65,7 @@ class SiriusCli {
             throw new \Exception("没有需要执行的脚本对象名称");
         }
 
-        $controller = $arguments['task'] . "Command";
+        $controller = ucfirst($arguments['task']) . "Command";
         $action = $arguments['action'] ? $arguments['action'] : "index";
         $params = $arguments['params'];
 
