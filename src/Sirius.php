@@ -122,11 +122,11 @@ class Sirius {
 
             //instanitate controller
             $controller = new $segments[0]();
-            $action = $segments[1]."Action";
+            $action = $segments[1];
 
             //fix multi parameters
             if(!method_exists($controller, $action)){
-                throw new \Exception("Controller:" . $segments[0] ." Method:". $action ." Not Found!",404);
+                throw new \Exception("Controller:" . $segments[0] ." Method:". $action ." Action Not Found!",404);
             }else{
                 $this->doBeforeFilter($beforeFilter);
                 $result = call_user_func_array(array($controller, $action), $params);
